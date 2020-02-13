@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteRule ^(.*)README.md(.*)$ http://transip.net
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ http://transip.net [NC,L]
